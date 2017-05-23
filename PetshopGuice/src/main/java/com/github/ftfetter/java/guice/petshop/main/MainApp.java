@@ -14,5 +14,16 @@ public class MainApp {
         if(petStoreService.addPet(1,"Dogge","Shiba", 3)){
             System.out.println(petStoreService.searchByAge(3).get(0).getName());
         }
+
+        petStoreService.doBath(1);
+        petStoreService.doHairCut(1);
+
+        petStoreService.printServiceHistory();
+
+        if(petStoreService.deletePet(1)){
+            if(petStoreService.searchByAge(3).size() == 0)
+                System.out.println("Pet deleted");
+        }
+
     }
 }

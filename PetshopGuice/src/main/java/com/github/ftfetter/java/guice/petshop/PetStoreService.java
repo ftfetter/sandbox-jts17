@@ -7,7 +7,8 @@ import java.util.Map;
 
 public class PetStoreService implements Service {
 
-    private Map<Integer,Pet> petMap = new HashMap<Integer,Pet>();
+    private Map<Integer,Pet> petMap = new HashMap<>();
+    private List<String> serviceHistory = new ArrayList<>();
 
     public boolean addPet(int id, String name, String race, int age){
         if (id <= 0)
@@ -42,11 +43,20 @@ public class PetStoreService implements Service {
 
     @Override
     public boolean doBath(int id) {
+
+        serviceHistory.add("Bath on pet where id = "+ id);
         return true;
     }
 
     @Override
     public boolean doHairCut(int id) {
+
+        serviceHistory.add("Hair cut on pet where id = "+ id);
         return true;
+    }
+
+    public void printServiceHistory(){
+        for(int i=0; i<serviceHistory.size(); i++)
+            System.out.println(serviceHistory.get(i));
     }
 }
