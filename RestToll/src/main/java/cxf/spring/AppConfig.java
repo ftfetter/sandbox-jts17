@@ -2,8 +2,7 @@ package cxf.spring;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import cxf.rest.TollResource;
-import cxf.rest.vehicles.BicycleResource;
-import cxf.rest.vehicles.BusResource;
+import cxf.rest.vehicles.*;
 import org.apache.cxf.bus.spring.SpringBus;
 import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
@@ -37,8 +36,13 @@ public class AppConfig {
     }
 
     @Bean
-    public TollResource tollRestService(){
-        return new TollResource(bicycleRestService(), busRestService());
+    public TollResource tollRestService() {
+        return new TollResource(bicycleRestService(), busRestService(), carRestService(), motorcycleRestService(), truckRestService());
+    }
+
+    @Bean
+    public BicycleResource bicycleRestService(){
+        return new BicycleResource();
     }
 
     @Bean
@@ -47,7 +51,17 @@ public class AppConfig {
     }
 
     @Bean
-    public BicycleResource bicycleRestService(){
-        return new BicycleResource();
+    public CarResource carRestService() {
+        return new CarResource();
+    }
+
+    @Bean
+    public MotorcycleResource motorcycleRestService() {
+        return new MotorcycleResource();
+    }
+
+    @Bean
+    public TruckResource truckRestService() {
+        return new TruckResource();
     }
 }
