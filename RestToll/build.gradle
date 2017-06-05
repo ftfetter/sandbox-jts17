@@ -31,9 +31,12 @@ dependencies {
             'org.springframework:spring-context:4.3.8.RELEASE',
             'org.springframework:spring-beans:4.3.8.RELEASE',
             'org.springframework:spring-web:4.3.8.RELEASE',
+            'org.springframework:spring-test:4.3.8.RELEASE',
 
             'org.eclipse.jetty:jetty-server:9.4.5.v20170502',
             'org.eclipse.jetty:jetty-annotations:9.4.5.v20170502',
-            'org.eclipse.jetty:jetty-webapp:9.4.5.v20170502'
+            'org.eclipse.jetty:jetty-webapp:9.4.5.v20170502',
+
+            'org.apache.httpcomponents:httpclient:4.5.2'
     ])
 }
