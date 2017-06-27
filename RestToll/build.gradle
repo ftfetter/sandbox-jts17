@@ -1,4 +1,4 @@
-group 'com.rest.calc'
+group 'com.rest.toll'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
